@@ -3,7 +3,9 @@ import { data } from './data';
 import Split from 'react-split';
 import { nanoid } from 'nanoid';
 import Sidebar from './components/Sidebar';
-import Editor from './components/Editor.js';
+import Editor from './components/Editor';
+import NoNote from './components/NoNote';
+import { GlobalStyle } from './GlobalStyle';
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -32,7 +34,7 @@ const App = () => {
 
   const findCurrentNote = () => {
     return (
-      notes.finds((note) => {
+      notes.find((note) => {
         return note.id === currentNoteId;
       }) || notes[0]
     );
@@ -41,7 +43,7 @@ const App = () => {
   return (
     <main>
       {notes.length > 0 ? (
-        <Split sizes={(30, 70)} direction='horizontal' className='split'>
+        <Split sizes={[30, 70]} direction='horizontal' className='split'>
           <Sidebar
             notes={notes}
             currentNote={findCurrentNote}
@@ -53,13 +55,9 @@ const App = () => {
           )}
         </Split>
       ) : (
-        <div className='no-notes'>
-          <h1>you have no note</h1>
-          <button className='first-note' onClick={createNewNote}>
-            Create one now
-          </button>
-        </div>
+        <NoNote createNewNote={createNewNote} />
       )}
+      <GlobalStyle />
     </main>
   );
 };
