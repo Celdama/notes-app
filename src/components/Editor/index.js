@@ -14,10 +14,12 @@ const Editor = ({ currentNote, updateNote }) => {
     tasklists: true,
   });
 
+  const { body } = currentNote;
+
   return (
     <Wrapper className='pane editor'>
       <ReactMde
-        value={currentNote.body}
+        value={body}
         onChange={updateNote}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
