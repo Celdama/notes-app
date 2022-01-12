@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactMde from 'react-mde';
 import Showdown from 'showdown';
+import { Wrapper } from './Editor.styles';
+import 'react-mde/lib/styles/css/react-mde-all.css';
 
 const Editor = ({ currentNote, updateNote }) => {
   const [selectedTab, setSelectedTab] = useState('write');
@@ -13,7 +15,7 @@ const Editor = ({ currentNote, updateNote }) => {
   });
 
   return (
-    <section className='pane editor'>
+    <Wrapper className='pane editor'>
       <ReactMde
         value={currentNote.body}
         onChange={updateNote}
@@ -25,7 +27,7 @@ const Editor = ({ currentNote, updateNote }) => {
         minEditorHeight={80}
         heightUnits='vh'
       />
-    </section>
+    </Wrapper>
   );
 };
 
