@@ -19,4 +19,8 @@ export const GlobalStyle = createGlobalStyle`
   .App {
 
   }
+
+  button:focus {
+    outline: none;
+  }
 `;
