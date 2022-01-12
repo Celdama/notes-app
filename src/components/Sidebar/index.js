@@ -2,6 +2,7 @@ import React from 'react';
 import { Wrapper, Content, Button } from './Sidebar.styles';
 
 const Sidebar = (props) => {
+  console.log(props.currentNote);
   const noteElements = props.notes.map((note, index) => (
     <div key={note.id}>
       <div

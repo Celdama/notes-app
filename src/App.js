@@ -46,7 +46,7 @@ const App = () => {
         <Split sizes={[30, 70]} direction='horizontal' className='split'>
           <Sidebar
             notes={notes}
-            currentNote={findCurrentNote}
+            currentNote={findCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
           />
