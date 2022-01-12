@@ -1,4 +1,5 @@
 import React from 'react';
+import { Wrapper, Content, Button } from './Sidebar.styles';
 
 const Sidebar = (props) => {
   const noteElements = props.notes.map((note, index) => (
@@ -15,15 +16,15 @@ const Sidebar = (props) => {
   ));
 
   return (
-    <section className='pane sidebar'>
-      <div className='sidebar--header'>
+    <Wrapper className='pane sidebar'>
+      <Content className='sidebar--header'>
         <h3>Notes</h3>
-        <button className='new-note' onClick={props.newNote}>
+        <Button className='new-note' onClick={props.newNote}>
           +
-        </button>
-        {noteElements}
-      </div>
-    </section>
+        </Button>
+      </Content>
+      {noteElements}
+    </Wrapper>
   );
 };
 

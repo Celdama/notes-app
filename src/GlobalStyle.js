@@ -23,4 +23,8 @@ export const GlobalStyle = createGlobalStyle`
   button:focus {
     outline: none;
   }
+
+  .split {
+    display: flex;
+  }
 `;
