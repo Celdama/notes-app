@@ -5,7 +5,7 @@ const NoNote = ({ createNewNote }) => {
   return (
     <Wrapper>
       <Content className='no-notes'>
-        <h1>you have no note</h1>
+        <h1>You have no note</h1>
         <Button className='first-note' onClick={createNewNote}>
           Create one now
         </Button>
