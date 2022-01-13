@@ -7,7 +7,13 @@ import {
   TrashIcon,
 } from './Sidebar.styles';
 
-const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
+const Sidebar = ({
+  notes,
+  currentNote,
+  setCurrentNoteId,
+  newNote,
+  deleteNote,
+}) => {
   const noteElements = notes.map(({ id, body }) => (
     <div key={id}>
       <div
@@ -15,7 +21,10 @@ const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
         onClick={() => setCurrentNoteId(id)}
       >
         <h4 className='text-snippet'>{body.split('\n')[0]}</h4>
-        <DeleteButton className='delete-btn'>
+        <DeleteButton
+          className='delete-btn'
+          onClick={(event) => deleteNote(event, id)}
+        >
           <TrashIcon />
         </DeleteButton>
       </div>
