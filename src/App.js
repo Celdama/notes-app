@@ -30,13 +30,20 @@ const App = () => {
   };
 
   const updateNote = (text) => {
-    setNotes((oldNotes) =>
-      oldNotes.map((oldNote) => {
-        return oldNote.id === currentNoteId
-          ? { ...oldNote, body: text }
-          : oldNote;
-      })
-    );
+    // try to rearrange the most recently-modified
+    setNotes((oldNotes) => {
+      const newArray = [];
+
+      oldNotes.forEach((oldNote) => {
+        if (oldNote.id === currentNoteId) {
+          newArray.unshift({ ...oldNote, body: text });
+        } else {
+          newArray.push(oldNote);
+        }
+      });
+
+      return newArray;
+    });
   };
 
   const findCurrentNote = () => {

@@ -48,4 +48,9 @@ _ of the App component
 
 ## Move modifier notes to the top of the list
 
+/\*\*
+_ Challenge: When the user edits a note, reposition
+_ it in the list of notes to the top of the list
+\*/
+
 ## Delete notes
