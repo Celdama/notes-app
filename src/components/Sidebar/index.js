@@ -2,13 +2,13 @@ import React from 'react';
 import { Wrapper, Content, Button } from './Sidebar.styles';
 
 const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
-  const noteElements = notes.map((note, index) => (
-    <div key={note.id}>
+  const noteElements = notes.map(({ id, body }) => (
+    <div key={id}>
       <div
-        className={`title ${note.id === currentNote.id ? 'selected-note' : ''}`}
-        onClick={() => setCurrentNoteId(note.id)}
+        className={`title ${id === currentNote.id ? 'selected-note' : ''}`}
+        onClick={() => setCurrentNoteId(id)}
       >
-        <h4 className='text-snippet'>Note {index + 1}</h4>
+        <h4 className='text-snippet'>{body.split('\n')[0]}</h4>
       </div>
     </div>
   ));

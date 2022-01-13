@@ -23,7 +23,28 @@ _ use JSON.parse() to turn the stringified array back
 _ into a real JS array.
 \*/
 
+/\*\*
+_ Challenge:
+_ Lazily initialize our `notes` state so it doesn't
+_ reach into localStorage on every single re-render
+_ of the App component
+\*/
+
 ## Add note summary titles
+
+    /**
+     * Challenge: Try to figure out a way to display only the
+     * first line of note.body as the note summary in the
+     * sidebar.
+     *
+     * Hint 1: note.body has "invisible" newline characters
+     * in the text every time there's a new line shown. E.g.
+     * the text in Note 1 is:
+     * "# Note summary\n\nBeginning of the note"
+     *
+     * Hint 2: See if you can split the string into an array
+     * using the "\n" newline character as the divider
+     */
 
 ## Move modifier notes to the top of the list
 
