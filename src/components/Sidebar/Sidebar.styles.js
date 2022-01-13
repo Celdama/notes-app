@@ -14,6 +14,10 @@ export const Wrapper = styled.section`
     justify-content: space-between;
     align-items: center;
 
+    :hover > .delete-btn {
+      display: block;
+    }
+
     .text-snippet {
       padding-inline: 5px;
       font-size: 0.8rem;
@@ -54,4 +58,52 @@ export const Button = styled.button`
   border-radius: 3px;
   height: 30px;
   width: 30px;
+`;
+
+export const DeleteButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+`;
+
+export const TrashIcon = styled.i`
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(1);
+  width: 10px;
+  height: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
+  border-radius: 0px 0px 1px 1px;
+  margin-top: 4px;
+
+  ::after,
+  ::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+  }
+
+  ::after {
+    background-color: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px;
+  }
+
+  ::before {
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -2px;
+  }
 `;

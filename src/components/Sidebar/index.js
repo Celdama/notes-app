@@ -1,5 +1,11 @@
 import React from 'react';
-import { Wrapper, Content, Button } from './Sidebar.styles';
+import {
+  Wrapper,
+  Content,
+  Button,
+  DeleteButton,
+  TrashIcon,
+} from './Sidebar.styles';
 
 const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
   const noteElements = notes.map(({ id, body }) => (
@@ -9,6 +15,9 @@ const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
         onClick={() => setCurrentNoteId(id)}
       >
         <h4 className='text-snippet'>{body.split('\n')[0]}</h4>
+        <DeleteButton className='delete-btn'>
+          <TrashIcon />
+        </DeleteButton>
       </div>
     </div>
   ));

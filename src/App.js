@@ -30,10 +30,9 @@ const App = () => {
   };
 
   const updateNote = (text) => {
-    // try to rearrange the most recently-modified
+    // Put the most recently-modified notes at the top
     setNotes((oldNotes) => {
       const newArray = [];
-
       oldNotes.forEach((oldNote) => {
         if (oldNote.id === currentNoteId) {
           newArray.unshift({ ...oldNote, body: text });
@@ -41,7 +40,6 @@ const App = () => {
           newArray.push(oldNote);
         }
       });
-
       return newArray;
     });
   };
