@@ -9,7 +9,7 @@ import { GlobalStyle } from './GlobalStyle';
 
 const App = () => {
   const [notes, setNotes] = useState(
-    JSON.parse(localStorage.getItem('notes')) || []
+    () => JSON.parse(localStorage.getItem('notes')) || []
   );
 
   const [currentNoteId, setCurrentNoteId] = useState(
