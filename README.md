@@ -1,3 +1,9 @@
+# Notes app
+
+Building this handy notes app.
+
+![preview](src/images/preview.png)
+
 # Features to add
 
 ## Sync notes with localStorage
